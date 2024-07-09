@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const port = 5000;
+const port = 8800;
 
 const app = express();
 
@@ -14,5 +14,7 @@ app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 app.use(express.static("public"));
 
 //Routes
+const UserRoutes = require("./routes/UserRoutes.js");
+app.use("/users", UserRoutes);
 
 app.listen(port);
