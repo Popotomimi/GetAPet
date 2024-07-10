@@ -15,6 +15,9 @@ app.use(express.static("public"));
 
 //Routes
 const UserRoutes = require("./routes/UserRoutes.js");
+const PetRoutes = require("./routes/PetRoutes.js");
+
 app.use("/users", UserRoutes);
+app.use("/pets", PetRoutes);
 
 app.listen(port);
