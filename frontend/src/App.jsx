@@ -11,18 +11,23 @@ import Home from "./components/pages/Home";
 import Login from "./components/pages/Auth/Login";
 import Register from "./components/pages/Auth/Register";
 
+// Context
+import { UserProvider } from "./context/UserContext";
+
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <Container>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
-      </Container>
-      <Footer />
+      <UserProvider>
+        <Navbar />
+        <Container>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </Container>
+        <Footer />
+      </UserProvider>
     </BrowserRouter>
   );
 }

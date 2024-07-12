@@ -1,12 +1,26 @@
+import { useState } from "react";
+
 import Input from "../../form/Input.jsx";
+import { Link } from "react-router-dom";
+
+import styles from "../../form/Form.module.css";
 
 const Register = () => {
-  const handleChange = (e) => {};
+  const [user, setUser] = useState({});
+
+  const handleChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(user);
+  };
 
   return (
-    <div>
+    <div className={styles.form_container}>
       <h1>Registrar</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <Input
           text="Nome"
           type="text"
@@ -44,6 +58,9 @@ const Register = () => {
         />
         <input type="submit" value="Cadastrar" />
       </form>
+      <p>
+        Já tem conta? <Link to="/login">Clique aqui!</Link>
+      </p>
     </div>
   );
 };
