@@ -50,3 +50,15 @@
   background-color: #16479d;
   color: #222;
 }
+
+.logout_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.logout_btn:hover {
+  background-color: #cd5c5c;
+  color: #222;
+}
