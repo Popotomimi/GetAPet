@@ -1,0 +1,88 @@
+.petlist_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.petlist_header h1 {
+  margin: 0;
+}
+
+.petlist_header a {
+  text-decoration: none;
+  background-color: #c8a2c8;
+  color: #222;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+  padding: 0.5em 0.8em;
+  border-radius: 5px;
+  border: solid 1px #222;
+}
+
+.petlist_header a:hover {
+  background-color: #a263ef;
+  box-shadow: 1px 1px 5px 1px #00000063;
+}
+
+.petlist_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.petlist_row {
+  border-bottom: 1px solid #a263ef;
+  padding: 1em;
+  margin: 1em;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.petlist_row img {
+  margin-right: 1em;
+}
+
+.petlist_row span {
+  min-width: 100px;
+}
+
+.actions {
+  margin-left: auto;
+}
+
+.petlist_row a {
+  text-decoration: none;
+  background-color: #c8a2c8;
+  color: #222;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+  padding: 0.5em 0.8em;
+  border-radius: 5px;
+  border: solid 1px #222;
+  margin-right: 15px;
+}
+
+.petlist_row a:hover {
+  background-color: #a263ef;
+  box-shadow: 1px 1px 5px 1px #00000063;
+}
+
+.delete {
+  cursor: pointer;
+  padding: 0.5em 0.8em;
+  font-weight: bold;
+  color: #222;
+  background-color: #ff6b6b;
+  border-radius: 5px;
+  border: solid 1px #222;
+  font-size: 15px;
+  transition: 0.5s;
+}
+
+.delete:hover {
+  background-color: #cd5c5c;
+  box-shadow: 1px 1px 5px 1px #000000a2;
+}

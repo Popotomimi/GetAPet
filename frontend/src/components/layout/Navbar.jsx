@@ -17,6 +17,7 @@ import { Context } from "../../context/UserContext";
 import { LuDog, LuLogOut } from "react-icons/lu";
 import { RiLoginCircleLine } from "react-icons/ri";
 import { FaUserEdit } from "react-icons/fa";
+import { BiSolidCat } from "react-icons/bi";
 
 const Navbar = () => {
   const { authenticated, logout } = useContext(Context);
@@ -35,6 +36,11 @@ const Navbar = () => {
         </li>
         {authenticated ? (
           <>
+            <li>
+              <Link to="/pet/mypets">
+                <BiSolidCat /> Meus Pets
+              </Link>
+            </li>
             <li>
               <Link to="/user/profile">
                 <FaUserEdit /> Perfil
