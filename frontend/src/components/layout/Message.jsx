@@ -8,29 +8,35 @@ const Message = () => {
   const customId = "custom-id-yes";
 
   useEffect(() => {
-    bus.addListener("flash", ({ message, type }) => {
-      setMessage(message);
-      setType(type);
-    });
-  }, [message]);
+    const handleFlash = ({ message, type }) => {
+      setTimeout(() => {
+        setMessage(message);
+        setType(type);
+      }, 0);
+    };
 
-  return (
-    <div className="message">
-      {type == "error" ? (
-        <div>
-          {toast.error(message, {
-            toastId: customId,
-          })}
-        </div>
-      ) : (
-        <div>
-          {toast.success(message, {
-            toastId: customId,
-          })}
-        </div>
-      )}
-    </div>
-  );
+    bus.addListener("flash", handleFlash);
+
+    return () => {
+      bus.removeListener("flash", handleFlash);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (type && message) {
+      if (type === "error") {
+        toast.error(message, {
+          toastId: customId,
+        });
+      } else {
+        toast.success(message, {
+          toastId: customId,
+        });
+      }
+    }
+  }, [type, message]);
+
+  return <div className="message"></div>;
 };
 
 export default Message;

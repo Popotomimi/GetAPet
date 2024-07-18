@@ -11,6 +11,15 @@ function MyAdoptions() {
   const [token] = useState(localStorage.getItem("token") || "");
 
   useEffect(() => {
+    const hasReloaded = localStorage.getItem("hasReloaded");
+
+    if (!hasReloaded) {
+      localStorage.setItem("hasReloaded", "true");
+      window.location.reload();
+    }
+  }, []);
+
+  useEffect(() => {
     api
       .get("/pets/myadoptions", {
         headers: {
@@ -31,13 +40,15 @@ function MyAdoptions() {
         {pets.length > 0 &&
           pets.map((pet) => (
             <div key={pet._id} className={styles.petlist_row}>
-              <Roundedimage
-                src={`${import.meta.env.VITE_APP_API}/images/pets/${
-                  pet.images[0]
-                }`}
-                alt={pet.name}
-                width="px75"
-              />
+              <div className="animate__animated animate__bounceIn">
+                <Roundedimage
+                  src={`${import.meta.env.VITE_APP_API}/images/pets/${
+                    pet.images[0]
+                  }`}
+                  alt={pet.name}
+                  width="px75"
+                />
+              </div>
               <span className="bold">{pet.name}</span>
               <div className={styles.contacts}>
                 <p>

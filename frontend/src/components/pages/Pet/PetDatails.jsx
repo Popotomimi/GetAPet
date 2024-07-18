@@ -18,6 +18,15 @@ const PetDatails = () => {
   const [token] = useState(localStorage.getItem("token") || "");
 
   useEffect(() => {
+    const hasReloaded = localStorage.getItem("hasReloaded");
+
+    if (!hasReloaded) {
+      localStorage.setItem("hasReloaded", "true");
+      window.location.reload();
+    }
+  }, []);
+
+  useEffect(() => {
     api.get(`/pets/${id}`).then((response) => {
       setPet(response.data.pet);
     });

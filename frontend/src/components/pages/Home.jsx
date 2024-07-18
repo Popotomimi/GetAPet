@@ -21,6 +21,12 @@ const Home = () => {
   const [pets, setPets] = useState([]);
 
   useEffect(() => {
+    return () => {
+      localStorage.removeItem("hasReloaded");
+    };
+  }, []);
+
+  useEffect(() => {
     api.get("/pets").then((response) => {
       setPets(response.data.pets);
     });

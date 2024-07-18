@@ -24,6 +24,15 @@ const MyPets = () => {
   const { setFlashMessage } = useFlashMessage();
 
   useEffect(() => {
+    const hasReloaded = localStorage.getItem("hasReloaded");
+
+    if (!hasReloaded) {
+      localStorage.setItem("hasReloaded", "true");
+      window.location.reload();
+    }
+  }, []);
+
+  useEffect(() => {
     api
       .get("/pets/mypets", {
         headers: {
@@ -87,13 +96,15 @@ const MyPets = () => {
         {pets.length > 0 &&
           pets.map((pet) => (
             <div className={styles.petlist_row} key={pet._id}>
-              <Roundedimage
-                src={`${import.meta.env.VITE_APP_API}/images/pets/${
-                  pet.images[0]
-                }`}
-                alt={pet.name}
-                width="px120"
-              />
+              <div className="animate__animated animate__rollIn">
+                <Roundedimage
+                  src={`${import.meta.env.VITE_APP_API}/images/pets/${
+                    pet.images[0]
+                  }`}
+                  alt={pet.name}
+                  width="px120"
+                />
+              </div>
               <span className="bold">{pet.name}</span>
               <div className={styles.actions}>
                 {pet.available ? (
