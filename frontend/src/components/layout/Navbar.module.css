@@ -26,7 +26,7 @@
 .navbar li,
 .navbar a {
   text-decoration: none;
-  color: #b0e2ff;
+  color: #222;
   cursor: pointer;
   padding: 0.5em 0.8em;
   transition: 0.5s;
@@ -47,8 +47,7 @@
 }
 
 .navbar li:hover > a {
-  background-color: #16479d;
-  color: #222;
+  background-color: #c8a2c8;
 }
 
 .logout_btn {

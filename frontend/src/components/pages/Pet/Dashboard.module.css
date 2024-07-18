@@ -29,6 +29,8 @@
 .petlist_container {
   display: flex;
   flex-direction: column;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .petlist_row {
@@ -85,4 +87,33 @@
 .delete:hover {
   background-color: #cd5c5c;
   box-shadow: 1px 1px 5px 1px #000000a2;
+}
+
+.conclude {
+  cursor: pointer;
+  padding: 0.5em 0.8em;
+  font-weight: bold;
+  color: #25b456;
+  margin-right: 15px;
+  background-color: #fff;
+  border: solid 1px #25b456;
+  border-radius: 5px;
+  font-size: 15px;
+  transition: 0.5s;
+}
+
+.conclude:hover {
+  background-color: #25b456;
+  color: #fff;
+  border-color: #222;
+  box-shadow: 1px 1px 5px 1px #000000a2;
+}
+
+/* My adopitions */
+.contacts {
+  margin-left: 2em;
+}
+
+.contacts p {
+  margin-bottom: 0.5em;
 }

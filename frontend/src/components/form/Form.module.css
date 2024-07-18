@@ -50,3 +50,15 @@
   border-radius: 5px;
   margin: 1em;
 }
+
+/* img login */
+.img {
+  height: 60vh;
+  width: 100%;
+  background-image: url("../../assets/img/login.jfif");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: auto;
+  margin-bottom: 35px;
+  border-radius: 5px;
+}

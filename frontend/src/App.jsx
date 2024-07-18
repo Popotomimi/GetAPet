@@ -15,6 +15,8 @@ import Profile from "./components/pages/User/Profile";
 import MyPets from "./components/pages/Pet/MyPets";
 import AddPet from "./components/pages/Pet/AddPet";
 import EditPet from "./components/pages/Pet/EditPet";
+import PetDatails from "./components/pages/Pet/PetDatails";
+import MyAdoptions from "./components/pages/Pet/MyAdoptions";
 
 // Context
 import { UserProvider } from "./context/UserContext";
@@ -22,6 +24,9 @@ import { UserProvider } from "./context/UserContext";
 // Message
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+// Animate
+import "animate.css";
 
 function App() {
   return (
@@ -37,7 +42,9 @@ function App() {
             <Route path="/user/profile" element={<Profile />} />
             <Route path="/pet/mypets" element={<MyPets />} />
             <Route path="/pet/add" element={<AddPet />} />
+            <Route path="/pet/:id" element={<PetDatails />} />
             <Route path="/pet/edit/:id" element={<EditPet />} />
+            <Route path="/pet/myadoptions" element={<MyAdoptions />} />
             <Route path="/" element={<Home />} />
           </Routes>
         </Container>

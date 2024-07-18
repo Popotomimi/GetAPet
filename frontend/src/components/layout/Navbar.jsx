@@ -18,6 +18,7 @@ import { LuDog, LuLogOut } from "react-icons/lu";
 import { RiLoginCircleLine } from "react-icons/ri";
 import { FaUserEdit } from "react-icons/fa";
 import { BiSolidCat } from "react-icons/bi";
+import { GiDogHouse } from "react-icons/gi";
 
 const Navbar = () => {
   const { authenticated, logout } = useContext(Context);
@@ -36,6 +37,12 @@ const Navbar = () => {
         </li>
         {authenticated ? (
           <>
+            <li>
+              <Link to="/pet/myadoptions">
+                {" "}
+                <GiDogHouse /> Minhas Adoções
+              </Link>
+            </li>
             <li>
               <Link to="/pet/mypets">
                 <BiSolidCat /> Meus Pets

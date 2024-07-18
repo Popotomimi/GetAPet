@@ -72,14 +72,16 @@ const Profile = () => {
       <div className={styles.profile_headers}>
         <h1>Perfil</h1>
         {(user.image || preview) && (
-          <Roundedimage
-            src={
-              preview
-                ? URL.createObjectURL(preview)
-                : `${import.meta.env.VITE_APP_API}/images/users/${user.image}`
-            }
-            alt={user.name}
-          />
+          <div className="animate__animated animate__flip">
+            <Roundedimage
+              src={
+                preview
+                  ? URL.createObjectURL(preview)
+                  : `${import.meta.env.VITE_APP_API}/images/users/${user.image}`
+              }
+              alt={user.name}
+            />
+          </div>
         )}
       </div>
       <form onSubmit={handleSubmit} className={formStyles.form_container}>

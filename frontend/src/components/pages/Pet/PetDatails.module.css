@@ -1,0 +1,59 @@
+.pet_datails_container {
+  text-align: center;
+}
+
+.pet_datails_container h1 {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.pet_datails_container p {
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+
+.pet_datails_container p a {
+  text-decoration: none;
+  font-weight: bolder;
+  color: #16479d;
+}
+
+.pet_datails_header {
+  margin-bottom: 2em;
+}
+
+.pet_images {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pet_images img {
+  max-height: 250px;
+  max-width: 250px;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 5px;
+}
+
+.pet_datails_container button {
+  text-decoration: none;
+  background-color: #c8a2c8;
+  color: #222;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+  padding: 0.8em 1em;
+  border-radius: 5px;
+  border: solid 1px #222;
+  margin-right: 15px;
+}
+
+.pet_datails_container button:hover {
+  background-color: #a263ef;
+  box-shadow: 1px 1px 5px 1px #00000063;
+}
